@@ -3,14 +3,18 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+    <h2 align="center" class="footer-heading" >Get in Touch</h2>
+    <!-- {%- if site.email -%}
+    <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+    {%- endif -%} -->
 
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
+      <!-- <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li class="p-name">
             {%- if site.author -%}
               {{ site.author | escape }}
+
             {%- else -%}
               {{ site.title | escape }}
             {%- endif -%}
@@ -19,15 +23,21 @@
             <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             {%- endif -%}
         </ul>
+      </div> -->
+
+      <div class="footer-col">
+        <p align="center" class="social-media-list">
+          <a href="mailto:{{ site.email }}" target="_blank" ><img src="{{ '/assets/m.png' | relative_url }}" width="20" height="20"></a> &nbsp;
+          {%- if site.linkedin_username -%}<a href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}" target="_blank"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg> <span class="username"></span></a>{%- endif -%}
+          {%- if site.instagram_username -%}<a href="https://instagram.com/{{ site.instagram_username| cgi_escape | escape }}" target="_blank"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#instagram' | relative_url }}"></use></svg> <span class="username"></span></a>{%- endif -%}
+          {%- if site.facebook_username -%}<a href="https://www.facebook.com/{{ site.facebook_username| cgi_escape | escape }}" target="_blank"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#facebook' | relative_url }}"></use></svg> <span class="username"></span></a>{%- endif -%}
+          
+        </p>
       </div>
 
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
-      </div>
-
-      <div class="footer-col footer-col-3">
+      <!-- <div class="footer-col footer-col-3">
         <p>{{- site.description | escape -}}</p>
-      </div>
+      </div> -->
     </div>
 
   </div>
